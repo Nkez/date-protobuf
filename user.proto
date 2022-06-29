@@ -5,7 +5,6 @@ package keycloak;
 option go_package = "github.com/Nkez/date-protobuf";
 
 import "google/protobuf/empty.proto";
-//import "google/protobuf/wrappers.proto";
 
 
 
@@ -16,6 +15,7 @@ message CreateUser {
   string user_name = 4;
   string country = 5;
   string mobile_phone = 6;
+  string photo = 7;
 }
 
 
@@ -31,6 +31,7 @@ message User {
   string user_name = 5;
   string mobile_phone = 6;
   string country = 7;
+  string photo = 8;
 }
 
 message Filter{
