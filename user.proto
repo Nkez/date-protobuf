@@ -16,8 +16,8 @@ message CreateUser {
   string country = 5;
   string mobile_phone = 6;
   string photo = 7;
+  bool  enabled = 8;
 }
-
 
 message GetUser {
   string id = 1;
@@ -32,6 +32,7 @@ message User {
   string mobile_phone = 6;
   string country = 7;
   string photo = 8;
+  bool  enabled = 9;
 }
 
 message Filter{
@@ -41,6 +42,7 @@ message Filter{
   string role = 4;
   int64 size = 5;
   int64 page =6;
+  bool enabled = 7;
 }
 
 message ListUser{
@@ -51,4 +53,6 @@ service UserService {
   rpc Get(keycloak.GetUser) returns (keycloak.User);
   rpc List(keycloak.Filter) returns (keycloak.ListUser);
   rpc Create(keycloak.CreateUser) returns (google.protobuf.Empty);
+  rpc Update(keycloak.User) returns (google.protobuf.Empty);
+  rpc Delete(keycloak.GetUser) returns (google.protobuf.Empty);
 }
